@@ -6,10 +6,9 @@
 recorrer adivinar letra por letra
 */
 
-let diccionario = ['APPLE', 'HURLS', 'WINGS', 'YOUTH']
-let palabra = diccionario[Math.floor(Math.random() * diccionario.length)];
+let diccionario = ['ACTOR', 'AVION', 'CAMPO', 'NUBES']
+let palabra = diccionario[Math.floor(Math.random() * diccionario.length)]; //para que eliga una palabra random. Cada que comience de nuevo el juego eligirá una nueva palabra de la lista.
 let intento = 6;
-
 
 const BOTON = document.getElementById('guess-button') //boton intentar
 
@@ -19,8 +18,8 @@ BOTON.addEventListener('click', intentar)
 
 function intentar () {
     const GRID = document.getElementById('grid');
-    const ROW = document.createElement('div');
-    ROW.className = 'row';
+    const ROW = document.createElement('div'); //estamos creando un div sin necesidad de poner en html
+    ROW.className = 'row'; //
 
     const INPUT2 = document.getElementById("guess-input").value.toUpperCase();
     if (INPUT2 === palabra) {
@@ -48,9 +47,9 @@ function intentar () {
 
             SPAN.innerHTML = INPUT2[i]
         }
-        ROW.appendChild(SPAN)
+        ROW.appendChild(SPAN) //row es hijo de span
     }
-    GRID.appendChild(ROW)
+    GRID.appendChild(ROW) //grid es hijo de row
     intento--
     if (intento == 0) {
     console.log('PERDISTE!')
