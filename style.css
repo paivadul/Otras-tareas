@@ -1,6 +1,6 @@
 body {
     font-family: fantasy, sans-serif;
-    background: linear-gradient(rgb(82, 0, 169), rgb(179, 255, 0))
+    background: linear-gradient(rgb(222, 192, 255), rgb(214, 255, 117))
   }
 
   .degradado {
@@ -21,7 +21,8 @@ body {
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     inset: 0;
-    position: center;
+    width: 50%;
+    margin: 0 auto;
   }
 
   #guess-input {
@@ -50,18 +51,17 @@ body {
   }
      
   .letter {
-      border: 1px solid rgb(123, 0, 255);
+      border: 1px solid rgb(27, 0, 54);
       border-radius: 5px;
-      padding: 3px;
+      padding: 30px;
       margin: 3px;
       min-width: 20px;
       text-align: center;
-      display: inline-block;
-      color: rgb(224, 194, 255);
+      color: rgb(27, 0, 54);
   }
      
   .row{
-      margin-bottom: 10px;
+      margin: 20px 0;
   }
      
   .input-area{
