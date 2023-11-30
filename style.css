@@ -1,9 +1,70 @@
-body{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: aliceblue;
-}
-#botón{
-    position: absolute;
+body {
+    font-family: fantasy, sans-serif;
+    background: linear-gradient(rgb(82, 0, 169), rgb(179, 255, 0))
+  }
+
+  .degradado {
+    height: 500px;
+    left: 50px;
+  }
+  
+  h1 {
+    color: rgb(82, 0, 169);
+    text-align: center;
+    margin-top: 50px;
+  }
+    
+  #contenedor {
+    text-align: center;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     inset: 0;
-    margin: 0;
-}
+    position: center;
+  }
+
+  #guess-input {
+    display: block;
+    margin: 0 auto 20px;
+    padding: 10px;
+    font-size: 18px;
+    width: 250px;
+    border: 2.5px solid rgb(179, 255, 0);
+    border-radius: 5px;
+  }
+     
+  #guess-button {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: rgb(123, 0, 255);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
+     
+  button:active {
+      transform: scale(0.85);
+  }
+     
+  .letter {
+      border: 1px solid rgb(123, 0, 255);
+      border-radius: 5px;
+      padding: 3px;
+      margin: 3px;
+      min-width: 20px;
+      text-align: center;
+      display: inline-block;
+      color: rgb(224, 194, 255);
+  }
+     
+  .row{
+      margin-bottom: 10px;
+  }
+     
+  .input-area{
+      margin: 30px;
+  }
+ 

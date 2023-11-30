@@ -1,82 +1,52 @@
-let vector = ['programando' , 'paraguay', 'otro', 'otro2' , 'otro3' ]
+/*si palabra a adivinar = palabra ingresada
+      verde
+    si no
+      gris
 
-console.log('esto es una lista', vector[vector.length - 3])
-/*comparar(1, 2, 3);
+recorrer adivinar letra por letra
+*/
 
-console.log('funciona x')
+let palabra = 'APPLE';
+let intento = 6;
 
-function comparar (n1, n2, n3) {
-    if (n1 >= n2 && n1 >= n3) {
-        console.log('Es mayor ', n1)
-    } else if (n2 >= n1 && n2 >= n3) {
-        console.log('Es mayor ',n2)
-    } else if (n3 > n1 && n3 > n2) {
-        console.log('Es mayor ',n3)
+const BOTON = document.getElementById('guess-button') //boton intentar
+
+
+BOTON.addEventListener('click', intentar)
+
+
+function intentar () {
+    const GRID = document.getElementById('grid');
+    const ROW = document.createElement('row');
+    ROW.className = 'row';
+
+    const INPUT2 = document.getElementById("guess-input").value.toUpperCase();
+    if (INPUT2 === palabra) {
+        console.log('Ganaste!')
+        return;
     }
-}
 
-
-function suma(x,y){
-    let resultado = x + y;
-    return resultado
-}
-
-let multiplicación = suma(4, 1) *  2;
-
-console.log(multiplicación);
-
-function resta (x,y){
-    return x + y
-}
-
-console.log(resta (2, 1) * 2)
-
-
-setTimeout(function() {
-    console.log('Han transcurrido 3 segundos');
-  }, 3000);
-
-
-function domingo (n1, n2, n3) {
-    if (n1 >= n2 && n1 >= n3) {
-        return n1;
-    } else {
-        return n2;
-    } else {
-        return n3;
+    for (i in palabra) {
+        const SPAN = document.createElement('span');
+        SPAN.className = 'letter'
+        if (palabra[i] === INPUT2[i]) {
+            console.log(INPUT2[i], 'verde');
+            SPAN.style.backgroundColor = 'green';
+            SPAN.innerHTML = INPUT2[i]
+        } else if (palabra.includes(INPUT2[i])) {
+            console.log(INPUT2[i], 'amarillo')
+            SPAN.style.backgroundColor = 'yellow';
+            SPAN.innerHTML = INPUT2[i]
+        } else {
+            console.log(INPUT2[i], 'gris')
+            SPAN.style.backgroundColor = 'gray';
+            SPAN.innerHTML = INPUT2[i]
+        }
+        ROW.appendChild(SPAN)
     }
-} 
-
-console.log(domingo (111, 23, 15) *2);
-
- /*let peso = 35
-
-if (peso <= 30) {
-    console.log('este es Holliday', Holliday(valor))
-} else {
-    console.log('este es superficie', superficie(peso))
-}
-
-
-function Holliday(peso) {
-    let resultado;
-    if (peso > 20) {
-        resultado = ((peso - 20) * 20) + 1500
-    } else if (peso < 20 && peso > 10) {
-        resultado = ((peso - 10) * 50) + 1000
-    } else {
-        resultado = peso * 100
-    }
-    return resultado
-}
-
-
- /*Superficie corporal = ( (peso * 4) + 7) / (peso + 90)
-
-    function superficie(peso) {
-        let aux = (((peso *4) + 7) / (peso + 90))
-        let resultado1  = aux * 1500
-        let resultado2  = aux * 2000
-        return [resultado1, resultado2
-        }*/
-
+    GRID.appendChild(ROW)
+    intento = intento - 1;
+    if (intento == 0) {
+    console.log('perdiste')
+    return;
+}}
